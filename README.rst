@@ -20,7 +20,7 @@ Clone
 
 You can clone the Xdebug source directory with::
 
-	git clone https://github.com/xdebug/xdebug.git
+	git clone https://github.com/NeoVG/xdebug.git
 
 Then move into this new directory::
 
@@ -78,15 +78,15 @@ The long winded way of installation is:
 Compile errors on macOS
 -----
 
-Xdebug might not compile on macOS using LLVM provided by Xcode. In this case, you have to install GCC via Homebrew.
+Xdebug might not compile on macOS using LLVM provided by Xcode. In this case, you have to install GCC via Homebrew and use it to compile Xcode::
 
-	brew update && brew install gcc
-	CC=gcc
-	CXX=g++
-	phpize
-	./configure
-	make
-	make install
+    brew update && brew install gcc
+    CC=gcc
+    CXX=g++
+    phpize
+    ./configure
+    make
+    make install
 
 Support
 -------
