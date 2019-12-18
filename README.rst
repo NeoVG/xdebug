@@ -1,12 +1,7 @@
 Xdebug
 ======
 
-.. image:: https://travis-ci.org/xdebug/xdebug.svg?branch=master
-.. image:: https://ci.appveyor.com/api/projects/status/glp9xfsmt1p25nkn?svg=true
-.. image:: https://circleci.com/gh/xdebug/xdebug/tree/master.svg?style=svg
-
-These are instructions for installing Xdebug from a Git checkout. Please refer
-to https://xdebug.org/support.php for support.
+This is a fork of Xdebug which still uses __debugInfo for user-defined classes. See https://bugs.xdebug.org/1662 for more details.
 
 Introduction
 ------------
@@ -18,7 +13,7 @@ from a source tarball first, or install a ``php-dev`` package if your
 distribution provides one. These scripts are by-products of the PHP
 compilation and installation processes and are needed to compile external
 extensions. It is important that the source version matches the installed
-version as there are slight, but important, differences between PHP versions. 
+version as there are slight, but important, differences between PHP versions.
 
 Clone
 -----
@@ -79,6 +74,19 @@ The long winded way of installation is:
 	Copyright (c) 1997-2017 The PHP Group
 	Zend Engine v3.2.0-dev, Copyright (c) 1998-2017 Zend Technologies
 		with Xdebug v2.6.0-dev, Copyright (c) 2002-2017, by Derick Rethans
+
+Compile errors on macOS
+-----
+
+Xdebug might not compile on macOS using LLVM provided by Xcode. In this case, you have to install GCC via Homebrew.
+
+    brew update && brew install gcc
+    CC=gcc
+    CXX=g++
+    phpize
+    ./configure
+    make
+    make install
 
 Support
 -------
